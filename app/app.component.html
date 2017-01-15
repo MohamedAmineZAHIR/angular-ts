@@ -1,0 +1,12 @@
+<my-title></my-title>
+
+<div class="search">
+    Filtrer la liste : <input #listFilter (keyup)="0" />
+    <hr />
+</div>
+
+<item-form></item-form>
+
+<div *ngFor="let item of collection | itemFilter:listFilter.value">
+    <item [item]="item" (onGetDetails)="onGetDetails($event)"></item>
+</div>
